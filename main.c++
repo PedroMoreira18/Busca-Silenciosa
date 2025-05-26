@@ -31,19 +31,19 @@ void loop() {
     Serial.println(rssi);
   } 
   else if (rssi > rssiThreshold && rssi <= -60) {
-    analogWrite(motorPin, 100);
+    analogWrite(motorPin, 200);
     Serial.println(rssi);
     Serial.println("CELULAR DISTANTE → VIBRAÇÃO FRACA");
   } 
   else if (rssi > -60 && rssi <= -40) {
-    analogWrite(motorPin, 25);
+    analogWrite(motorPin, 125);
     Serial.println(rssi);
     Serial.println("CELULAR PROXIMO → VIBRAÇÃO MÉDIA");
   } 
   else { // rssi > -40 (mais perto de 0)
     analogWrite(motorPin, 1);
     Serial.println(rssi);
-    Serial.println("CELULAR MUITO PROXIMO → VIBRAÇÃO FORTE");
+    Serial.println("CELULAR MUITO PROXIMO → VIBRAÇÃO FORTE"); 
   }
   if (!redeEncontrada) {
     analogWrite(motorPin, 0);
